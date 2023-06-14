@@ -2,10 +2,13 @@
 {% block content %}
 
 {% if playlists %}
+<h1>Pick a playlist</h1>
 {% for playlist in playlists %}
-    <div class="playlist">
+    <button class="playlist" onclick="window.location.href = '/playlist/{{ playlist.id }}';">
+        <img src="{{ playlist.images[0].url }}" alt="{{ playlist.name }}" height="100px" width="100px">
+        <br>
         {{ playlist.name }}
-    </div>
+    </button>
 {% endfor %}
 {% else %}
     <p>No playlists found</p>

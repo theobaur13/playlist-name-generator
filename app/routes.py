@@ -29,5 +29,19 @@ def playlists():
         return redirect(url_for("home"))
     
     sp = spotipy.Spotify(auth = token_info["access_token"])
+    playlists = sp.current_user_playlists()["items"]
 
-    return render_template("playlists.html", playlists=sp.current_user_playlists()["items"])
+    return render_template("playlists.html", playlists=playlists)
+
+@app.route("/playlist/<id>")
+def playlist(id):
+    try:
+        token_info = get_token()
+    except:
+        return redirect(url_for("home"))
+    
+    sp = spotipy.Spotify(auth = token_info["access_token"])
+    playlist = sp.playlist(id)
+    tracks = playlist["tracks"]["items"]
+    
+    return render_template("playlist.html",tracks=tracks)
