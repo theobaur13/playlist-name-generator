@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+{% block content %}
+
+{% if playlists %}
+{% for playlist in playlists %}
+    <div class="playlist">
+        {{ playlist.name }}
+    </div>
+{% endfor %}
+{% else %}
+    <p>No playlists found</p>
+{% endif %}
+
+{% endblock %}

@@ -1,6 +1,5 @@
 from flask_wtf import FlaskForm
-from wtforms import StringField
-from wtforms.validators import DataRequired
+from wtforms import SubmitField
 
-class UsernameForm(FlaskForm):
-    username = StringField('username', validators=[DataRequired()])
+class SubmitButton(FlaskForm):
+    submit = SubmitField('Upload playlist')
