@@ -29,3 +29,10 @@ def get_token():
     return token_info
 
 # get playlist tracks (requires scope: playlist-read-private) https://developer.spotify.com/documentation/web-api/reference/playlists/get-playlists-tracks/
+def get_playlist_info(playlist):
+    playlist_dict = {}
+    for track in playlist["tracks"]["items"]:
+        artists = [artist["name"] for artist in track["track"]["artists"]]
+        playlist_dict[track["track"]["name"]] = artists
+    return playlist_dict
+    
