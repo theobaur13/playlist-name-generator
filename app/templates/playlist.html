@@ -3,5 +3,10 @@
 
 {{ playlist_name }}
 
+<form action="" method="post">
+    {{ refresh_button.csrf_token }}
+    {{ refresh_button.submit }}
+</form>
+
 {% endblock %}
 
