@@ -1,25 +1,45 @@
 {% extends "base.html" %}
 {% block content %}
 
-<h1>Home</h1>
+<h1>- AI Playlist Name Generator -</h1>
 
-<form action="" method="post">
+<form action="" method="post"> 
     {{ button.csrf_token }}
-    {{ button.submit }}
+    {{ button.submit(class_="action-button") }}
 </form>
 
-<h2>What is this?</h2>
+<section>
+    <h2>What is this?</h2>
+    <p>This is a Flask-based website that enables users to upload their Spotify playlists to generate a tailored playlist name using GPT-4.</p>
+</section>
 
-<h2>How to use</h2>
+<section>
+    <h2>How to use</h2>
+    <ol>
+        <li>Click "Upload playlist"</li>
+        <li>Connect your Spotify account</li>
+        <li>Click the playlist that you want to generate a new name for</li>
+        <li>If you want to generate a new name, click "Generate another playlist name"</li>
+    </ol>
+</section>
 
-<h2>How it works</h2>
+<section>
+    <h2>How it works</h2>
+    <p>Your Spotify account is linked to the website using Spotify's API. We don't store any data but the site needs access to:</p>
+        <ul>
+            <li><a href="https://developer.spotify.com/documentation/web-api/concepts/scopes#user-read-private">Your spotify account type</a></li> 
+            <li><a href="https://developer.spotify.com/documentation/web-api/concepts/scopes#user-read-email">Your email address</a></li>
+            <li><a href="https://developer.spotify.com/documentation/web-api/concepts/scopes#playlist-read-private">Your playlists</a></li>
+            <li><a href="https://developer.spotify.com/documentation/web-api/concepts/scopes#playlist-read-collaborative">Your collaborative playlists</a></li>
+        </ul>
+    <p>We read each song and artist name in your selected playlist and pass it into the <i>text-davinci-003</i> model (part of the GPT 3.5 family) to generate a name specific to the songs in your playlist</p>
+</section>
 
-<h2>Changelog</h2>
+<section>
+    <h2>Donate to developer</h2>
 
-<h2>Known issues</h2>
-
-<h2>Future plans</h2>
-
-<h2>Donate to developer</h2>
+    <p>Hosting and API costs are funded by me personally, any contributions to help the upkeep would be welcome</p>
+    <p><a href="https://bmc.link/theobaur">Buy me a coffee</a></p>
+</section>
 
 {% endblock %}

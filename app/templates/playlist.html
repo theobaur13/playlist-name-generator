@@ -5,8 +5,7 @@
 
 <form action="" method="post">
     {{ refresh_button.csrf_token }}
-    {{ refresh_button.submit }}
+    {{ refresh_button.submit(class_="action-button") }}
 </form>
 
 {% endblock %}
-
