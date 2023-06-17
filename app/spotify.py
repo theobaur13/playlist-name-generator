@@ -14,8 +14,8 @@ def create_oauth():
     return SpotifyOAuth(
         # client_id=spotify_client_id,
         # client_secret=spotify_client_secret,
-        client_id=os.getenv("SPOTIFY_CLIENT_ID"),
-        client_secret=os.getenv("SPOTIFY_CLIENT_SECRET"),
+        client_id=os.environ.get("SPOTIFY_CLIENT_ID"),
+        client_secret=os.environ.get("SPOTIFY_CLIENT_SECRET"),
         redirect_uri=url_for("callback", _external=True),
         scope="user-read-private user-read-email playlist-read-private playlist-read-collaborative"
     )
