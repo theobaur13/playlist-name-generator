@@ -2,5 +2,6 @@ venv
 *.pyc
 keys.py
 .cache
-```
 .vercel
+.env
+```

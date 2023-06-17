@@ -1,18 +1,22 @@
 from requests import get, post
-from keys import spotify_client_id, spotify_client_secret
+# from keys import spotify_client_id, spotify_client_secret
 from app.routes import url_for, session
 import spotipy
 from spotipy.oauth2 import SpotifyOAuth
 import base64
 import time
+from app import os
+from dotenv import load_dotenv
 
 def get_header(token):
     return {"Authorization": "Bearer " + token}
 
 def create_oauth():
     return SpotifyOAuth(
-        client_id=spotify_client_id,
-        client_secret=spotify_client_secret,
+        # client_id=spotify_client_id,
+        # client_secret=spotify_client_secret,
+        client_id=os.getenv("SPOTIFY_CLIENT_ID"),
+        client_secret=os.getenv("SPOTIFY_CLIENT_SECRET"),
         redirect_uri=url_for("callback", _external=True),
         scope="user-read-private user-read-email playlist-read-private playlist-read-collaborative"
     )
