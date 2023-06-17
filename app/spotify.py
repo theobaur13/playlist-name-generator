@@ -5,8 +5,12 @@ import spotipy
 from spotipy.oauth2 import SpotifyOAuth
 import base64
 import time
-from app import os
+import os
 from dotenv import load_dotenv
+from pathlib import Path
+
+env_path = Path('.') / '.env'
+load_dotenv(dotenv_path=env_path)
 
 def get_header(token):
     return {"Authorization": "Bearer " + token}

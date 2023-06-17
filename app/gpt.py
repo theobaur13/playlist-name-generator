@@ -1,9 +1,9 @@
 import openai
 # from keys import openai_secret_key
-from app import os
-from dotenv import load_dotenv
+# from app import os
+# from dotenv import load_dotenv
 
-openai.api_key = os.getenv("OPENAI_SECRET_KEY")
+# openai.api_key = os.getenv("OPENAI_SECRET_KEY")
 
 def generate_playlist_name(playlist_info):
     response = openai.Completion.create(
