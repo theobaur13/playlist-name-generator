@@ -1,4 +1,7 @@
 import openai
+from keys import openai_secret_key
+
+openai.api_key = openai_secret_key
 
 def generate_playlist_name(playlist_info):
     response = openai.Completion.create(
