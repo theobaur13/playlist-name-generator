@@ -66,6 +66,7 @@ ol {
     font-family: "Moulpali", cursive;
     border: 2px solid #333;
     box-shadow: 2px 2px 0 #333;
+    margin-bottom: 5px;
 }
 
 .action-button:hover{

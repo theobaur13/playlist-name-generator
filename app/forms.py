@@ -5,4 +5,10 @@ class SubmitButton(FlaskForm):
     submit = SubmitField('Upload playlist')
 
 class RefreshButton(FlaskForm):
-    submit = SubmitField('Generate another playlist name')
+    submit = SubmitField('Generate another name')
+
+class PickPlaylistButton(FlaskForm):
+    submit = SubmitField('Choose a different playlist')
+
+class HomeButton(FlaskForm):
+    submit = SubmitField('Home')

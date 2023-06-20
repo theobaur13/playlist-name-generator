@@ -8,4 +8,14 @@
     {{ refresh_button.submit(class_="action-button") }}
 </form>
 
+<form action="{{ url_for('playlists') }}" method="get">
+    {{ pick_playlist_button.csrf_token }}
+    {{ pick_playlist_button.submit(class_="action-button") }}
+</form>
+
+<form action="{{ url_for('home') }}" method="get">
+    {{ home_button.csrf_token }}
+    {{ home_button.submit(class_="action-button") }}
+</form>
+
 {% endblock %}

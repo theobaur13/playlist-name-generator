@@ -1,7 +1,7 @@
 from app import app
 from flask import render_template, redirect, url_for, request, session
 from app.spotify import create_oauth, get_token, spotipy, get_playlist_info
-from app.forms import SubmitButton, RefreshButton
+from app.forms import SubmitButton, RefreshButton, PickPlaylistButton, HomeButton
 from app.gpt import generate_playlist_name
 
 @app.route('/', methods=['GET', 'POST'])
@@ -47,7 +47,10 @@ def playlist(id):
     playlist_name = generate_playlist_name(playlist_info)
 
     refresh_button = RefreshButton()
+    pick_playlist_button = PickPlaylistButton()
+    home_button = HomeButton()
+
     if refresh_button.validate_on_submit():
         playlist_name = generate_playlist_name(playlist_info)
 
-    return render_template("playlist.html", playlist_name=playlist_name, refresh_button=refresh_button)
+    return render_template("playlist.html", playlist_name=playlist_name, refresh_button=refresh_button, pick_playlist_button=pick_playlist_button, home_button=home_button)
