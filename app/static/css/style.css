@@ -100,6 +100,7 @@ input {
     border-radius: 3px;
     border: 2px solid #333;
     box-shadow: 2px 2px 0 #333;
+    color: black;
 }
 
 .playlist:hover{
