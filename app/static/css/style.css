@@ -74,6 +74,12 @@ ol {
     cursor: pointer;
 }
 
+input {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+}
+
 .playlist-container{
     display: flex;
     flex-wrap: wrap;
