@@ -17,7 +17,7 @@ def create_oauth():
         # client_id=os.environ.get("SPOTIFY_CLIENT_ID"),
         # client_secret=os.environ.get("SPOTIFY_CLIENT_SECRET"),
         redirect_uri=url_for("callback", _external=True),
-        scope="user-read-private user-read-email playlist-read-private playlist-read-collaborative"
+        scope="playlist-read-private"
     )
 
 def get_token():
