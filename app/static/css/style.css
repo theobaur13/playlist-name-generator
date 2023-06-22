@@ -75,12 +75,15 @@ form {
     border: 2px solid #333;
     box-shadow: 2px 2px 0 #333;
     margin-bottom: 5px;
+    color: #F4F1DE;
 }
 
 .action-button:hover{
-    background-color: #3D405B;
-    color: #F4F1DE;
+    background-color: #c2bfa4;
+    border: 2px solid #cccccc;
+    box-shadow: 2px 2px 0 #cccccc;
     cursor: pointer;
+    filter: invert(100%);
 }
 
 #spotify-logo-home{
