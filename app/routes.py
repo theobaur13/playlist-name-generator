@@ -1,17 +1,16 @@
 from app import app
 from flask import render_template, redirect, url_for, request, session
 from app.spotify import create_oauth, get_token, spotipy, get_playlist_info
-from app.forms import SubmitButton, RefreshButton, PickPlaylistButton, HomeButton
+from app.forms import RefreshButton, PickPlaylistButton, HomeButton
 from app.gpt import generate_playlist_name
 
 @app.route('/', methods=['GET', 'POST'])
 def home():
-    button = SubmitButton()
-    if button.validate_on_submit():
+    if request.method == 'POST':
         oauth = create_oauth()
         auth_url = oauth.get_authorize_url()
         return redirect(auth_url)
-    return render_template('home.html', button=button)
+    return render_template('home.html')
 
 @app.route('/callback')
 def callback():

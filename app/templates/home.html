@@ -4,8 +4,10 @@
 <h1>- AI Playlist Name Generator -</h1>
 
 <form action="" method="post"> 
-    {{ button.csrf_token }}
-    {{ button.submit(class_="action-button") }}
+    <button type="submit" class="action-button">
+        Upload playlist
+        <img src="/static/img/Spotify_Icon_RGB_Black.png" id="spotify-logo-home">
+    </button>
 </form>
 
 <section>

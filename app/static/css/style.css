@@ -57,7 +57,15 @@ ol {
     margin-right: 20px;
 }
 
+form {
+    display: flex;
+    justify-content: center;
+}
+
 .action-button{
+    display: flex;
+    align-items: center;
+    justify-content: center;
     width: 96%;
     background-color: #E07A5F;
     padding: 10px 20px;
@@ -73,6 +81,12 @@ ol {
     background-color: #3D405B;
     color: #F4F1DE;
     cursor: pointer;
+}
+
+#spotify-logo-home{
+    width: 25px;
+    height: auto;
+    margin: 8px;
 }
 
 input {
