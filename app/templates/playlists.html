@@ -6,7 +6,12 @@
 <div class="playlist-container">
 {% for playlist in playlists %}
     <button class="playlist" onclick="window.location.href = '/playlist/{{ playlist.id }}';">
-        <img src="{{ playlist.images[0].url }}" alt="{{ playlist.name }}" height="100px" width="100px">
+        <div class="playlist-image-container">
+            <img src="{{ playlist.images[0].url }}" alt="{{ playlist.name }}" height="100px" width="100px" class="playlist-image">
+            <a href="https://open.spotify.com/playlist/{{ playlist.id }}">
+                <img src="/static/img/Spotify_Icon_RGB_Green.png" alt="Spotify logo" class="spotify-logo">
+            </a>
+        </div>
         <br>
         <p>{{ playlist.name }}</p>
     </button>

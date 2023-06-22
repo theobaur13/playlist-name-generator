@@ -2,7 +2,7 @@ from flask_wtf import FlaskForm
 from wtforms import SubmitField
 
 class SubmitButton(FlaskForm):
-    submit = SubmitField('Upload playlist')
+    submit = SubmitField('Upload Spotify playlist')
 
 class RefreshButton(FlaskForm):
     submit = SubmitField('Generate another name')

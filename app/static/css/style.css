@@ -109,6 +109,31 @@ input {
     cursor: pointer;
 }
 
+.playlist-image-container{
+    position: relative;
+    display: inline-block
+}
+
+.playlist-image{
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
+.spotify-logo{
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 25px;
+    height: auto;
+    margin: 5px;
+}
+
+.spotify-logo:hover{
+    cursor: pointer;
+    scale: 1.1;
+}
+
 a{
     color: #3D405B;
 }
