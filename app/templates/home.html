@@ -6,20 +6,20 @@
 <form action="" method="post"> 
     <button type="submit" class="action-button">
         Upload playlist
-        <img src="/static/img/Spotify_Icon_RGB_White.png" id="spotify-logo-home" alt="Spotify logo">
+        <img src="/static/img/Apple_Music_Icon_wht_lg_072420.png" id="spotify-logo-home" alt="Spotify logo">
     </button>
 </form>
 
 <section>
     <h2>What is this?</h2>
-    <p>This is a Flask-based website that enables users to upload their Spotify playlists to generate a tailored playlist name using GPT-3.5. This website is hosted using <a href="https://vercel.com/">Vercel</a>.</p>
+    <p>This is a Flask-based website that enables users to upload their Apple Music playlists to generate a tailored playlist name using GPT-3.5. This website is hosted using <a href="https://vercel.com/">Vercel</a>.</p>
 </section>
 
 <section>
     <h2>How to use</h2>
     <ol>
         <li>Click "Upload playlist"</li>
-        <li>Connect your Spotify account</li>
+        <li>Connect your Apple Music account</li>
         <li>Click the playlist that you want to generate a new name for</li>
         <li>If you want to generate a new name, click "Generate another playlist name"</li>
     </ol>
@@ -27,21 +27,30 @@
 
 <section>
     <h2>How it works</h2>
-    <p>Your Spotify account is linked to the website using Spotify's API. We don't store any data but the site needs access to:</p>
+    <p>Your Apple Music account is linked to the website using the Apple Music MusicKit API. We don't store any data but the site needs access to:</p>
         <ul>
-            <li>-<a href="https://developer.spotify.com/documentation/web-api/concepts/scopes#user-read-private">Your spotify account type</a></li> 
-            <li>-<a href="https://developer.spotify.com/documentation/web-api/concepts/scopes#user-read-email">Your email address</a></li>
-            <li>-<a href="https://developer.spotify.com/documentation/web-api/concepts/scopes#playlist-read-private">Your playlists</a></li>
-            <li>-<a href="https://developer.spotify.com/documentation/web-api/concepts/scopes#playlist-read-collaborative">Your collaborative playlists</a></li>
+            <li>-<a href="https://developer.apple.com/documentation/applemusicapi/get_all_library_playlists">Your playlists</a></li>
+            <li>-<a href="https://developer.apple.com/documentation/applemusicapi/get_a_library_playlist">The content inside your playlists</a></li>
         </ul>
     <p>We read each song and artist name in your selected playlist and pass it into the <i>text-davinci-003</i> model (part of the GPT 3.5 family) to generate a name specific to the songs in your playlist.</p>
-    <p>-You can view the source code for this site on my <a href="https://github.com/theobaur13/playlist-name-generator">GitHub</a></p>
+    <p>-You can view the source code for this site on my <a href="https://github.com/theobaur13/playlist-name-generator">GitHub.</a></p>
+</section>
+
+<section>
+    <h2>Does it work with Spotify?</h2>
+    <p>No it doesn't. The original version of this website was created and fully functional using Spotify's API, however, to get a website approved for public use using their 
+        API a <i><a href="https://developer.spotify.com/documentation/web-api/concepts/quota-modes">Quota Extension Request</i></a> must be approved by Spotify internally. The orignal version of this website
+    violated the <i><a href="https://developer.spotify.com/policy">Spotify Developer Policy</a></i> Section III. 14.</p>
+    <ul>
+        <li><i>- Do not use the Spotify Platform or any Spotify Content to train a machine learning or AI model or otherwise ingest Spotify Content into a machine learning or AI model.</i></li>
+    </ul>
+    <p>Following the rejection I decided to change this website to use Apple Music instead of Spotify, however the original version is available for viewing on my <a href="https://github.com/theobaur13/playlist-name-generator/tree/5d9d3fe606607ce4c9fae3aba32b46d0362a80af">
+        GitHub</a> if anyone happens to find it beneficial, or in a scenario where Spotify loosens their AI policy.</p>
 </section>
 
 <section>
     <h2>Donate to developer</h2>
-
-    <p>Hosting and API costs are funded by me personally, any contributions to help the upkeep would be welcome</p>
+    <p>Hosting, API costs and my Apple Developer License are funded by me personally, any contributions to help the upkeep would be welcome.</p>
     <p>-<a href="https://bmc.link/theobaur">Buy me a coffee</a></p>
 </section>
 

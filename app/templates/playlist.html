@@ -1,7 +1,7 @@
 {% extends "base.html" %}
 {% block content %}
 
-<h1>- {{ playlist_name }} -</h1>
+<h1 id="playlist-name">- Thinking of name... -</h1>
 
 <form action="" method="post">
     {{ refresh_button.csrf_token }}
@@ -17,5 +17,37 @@
     {{ home_button.csrf_token }}
     {{ home_button.submit(class_="action-button") }}
 </form>
+
+<script>
+    document.addEventListener("musickitloaded", async function() {
+        const music = MusicKit.getInstance();
+        await music.authorize();
+
+        const response = await music.api.music('v1/me/library/playlists/{{ playlist_id }}?include=tracks');
+        track_data = response.data.data[0].relationships.tracks.data;
+
+        let combined_string = "";
+
+        track_data.forEach(function(track) {
+            combined_string += track.attributes.name + " - " + track.attributes.artistName + "\n";
+        });
+        
+        const xhr = new XMLHttpRequest();
+        xhr.open("POST", "{{ url_for('process_tracks') }}", true);
+        xhr.setRequestHeader('Content-Type', 'text/plain');
+        xhr.onreadystatechange = function() {
+            if (xhr.readyState === 4 && xhr.status === 200) {
+                console.log(xhr.responseText);
+                document.getElementById("playlist-name").innerHTML = "-" + xhr.responseText + " -";
+            }
+        };
+        xhr.send(combined_string);
+    });
+
+    if (window.MusicKit) {
+        document.dispatchEvent(new Event('musickitloaded'));
+    }
+
+</script>
 
 {% endblock %}

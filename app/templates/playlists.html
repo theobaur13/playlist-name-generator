@@ -1,24 +1,13 @@
 {% extends "base.html" %}
 {% block content %}
 
-{% if playlists %}
+
 <h1>- Pick a playlist -</h1>
-<div class="playlist-container">
-{% for playlist in playlists %}
-    <button class="playlist" onclick="window.location.href = '/playlist/{{ playlist.id }}';">
-        <div class="playlist-image-container">
-            <img src="{{ playlist.images[0].url }}" alt="{{ playlist.name }}" height="100px" width="100px" class="playlist-image">
-            <a href="https://open.spotify.com/playlist/{{ playlist.id }}">
-                <img src="/static/img/Spotify_Icon_RGB_Green.png" alt="Spotify logo" class="spotify-logo" height="25px" width="25px" >
-            </a>
-        </div>
-        <br>
-        <p>{{ playlist.name }}</p>
-    </button>
-{% endfor %}
+
+<div class="playlist-container" id="playlist-container">
+    <p>Loading playlists...</p>
 </div>
-{% else %}
-    <p>No playlists found</p>
-{% endif %}
+
+<script src="static/js/playlists.js"></script>
 
 {% endblock %}

@@ -1,5 +1,5 @@
 # playlist-name-generator
-A Flask-based website that enables users to upload their Spotify playlists and generate playlist names using GPT-3.5. The Spotify API is used to connect to the user's account and retrieve both their playlists and the songs inside each playlist. The OpenAI API text-davinci-003 model is used to generate names for the playlists based on the songs inside them. 
+A Flask-based website that enables users to upload their Apple Music playlists and generate playlist names using GPT-3.5. The Spotify API is used to connect to the user's account and retrieve both their playlists and the songs inside each playlist. The OpenAI API text-davinci-003 model is used to generate names for the playlists based on the songs inside them. 
 
 ## Installation
 Clone repository
@@ -15,13 +15,20 @@ venv\Scripts\activate
 pip install -r requirements.txt
 ```
 
-Create a file named **keys.py** into the **playlist-name-generator** directory and add API keys from [Spotify API](https://developer.spotify.com/documentation/web-api), [OpenAI API](https://openai.com/blog/openai-api), and your own custom generated Flask secret key.
+Create a file named **keys.py** into the **playlist-name-generator** directory and add API keys from [Apple Music API](https://developer.apple.com/documentation/applemusicapi), [OpenAI API](https://openai.com/blog/openai-api), and your own custom generated Flask secret key.
 
 ```python
 config_key = "CUSTOM_CONFIG_KEY"
-spotify_client_id = "SPOTIFY_CLIENT_ID"
-spotify_client_secret = "SPOTIFY_CLIENT_SECRET"
-openai_secret_key = "OPENAI_SECRET_KEY"
+apple_team_id = "APPLE_TEAM_ID"
+apple_key_id = "APPLE_KEY_ID"
+apple_secret_key = "-----BEGIN PRIVATE KEY-----APPLE_PRIVATE_KEY-----END PRIVATE KEY-----"
+```
+
+Add the environment variables **DEVELOPER_KEY** and **EXPIRY**, these will be overwritten so it doesn't matter what these are set to
+
+```cmd
+set DEVELOPER_TOKEN=abcs
+set EXPIRY=0
 ```
 
 ## Usage

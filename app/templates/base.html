@@ -14,9 +14,16 @@
 
     <!-- mobile responsive -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- musickit on the web -->
+    <meta name="apple-music-developer-token" content="{{ access_token }}">
+    <meta name="apple-music-app-name" content="AI Playlist Name Generator" />
+    <meta name="apple-music-app-build" content="1.0" />
 </head>
 
 <body>
+    <script src="https://js-cdn.music.apple.com/musickit/v3/musickit.js" async></script>
+
     <div id="content">
         {% block content %}
         {% endblock %}
