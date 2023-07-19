@@ -86,9 +86,9 @@ form {
     filter: invert(100%);
 }
 
-#spotify-logo-home{
+#apple-music-logo-home{
     width: 25px;
-    height: auto;
+    height: 25px;
     margin: 8px;
 }
 
@@ -139,20 +139,6 @@ button {
 
 .playlist-image{
     display: block;
-}
-
-.spotify-logo{
-    position: absolute;
-    bottom: 0;
-    right: 0;
-    width: 25px;
-    height: auto;
-    margin: 5px;
-}
-
-.spotify-logo:hover{
-    cursor: pointer;
-    scale: 1.1;
 }
 
 a{

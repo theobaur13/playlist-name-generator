@@ -20,6 +20,8 @@
 
 <script>
     document.addEventListener("musickitloaded", async function() {
+        await new Promise(resolve => setTimeout(resolve, 250)); 
+        
         const music = MusicKit.getInstance();
         await music.authorize();
 

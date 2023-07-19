@@ -1,10 +1,21 @@
-window.open = function(url, windowName, windowFeatures) { 
-    console.log('window caught', url, windowName, windowFeatures);
-    window.location.href = url;
-    return null;
-};
+var md = new MobileDetect(window.navigator.userAgent);
+var isChrome = window.navigator.userAgent.indexOf('Chrome') > -1;
+
+if (md.mobile() ) {
+    console.log('mobile');
+    window.open = function(url, windowName, windowFeatures) { 
+        console.log('window caught', url, windowName, windowFeatures);
+        if (isChrome) {
+            window.location.assign(url);
+        } else {
+            window.location.href = url;
+        }
+        return null;
+    };
+}
 
 document.addEventListener("musickitloaded", async function() {
+    await new Promise(resolve => setTimeout(resolve, 250)); 
     const music = MusicKit.getInstance();
     await music.authorize();
     const playlists = await music.api.music('v1/me/library/playlists?include=artwork');
