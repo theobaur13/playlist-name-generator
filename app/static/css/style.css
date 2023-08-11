@@ -11,6 +11,14 @@ body {
     min-height: 70vh;
 }
 
+#logo {
+    margin-top: 40px;
+}
+
+#home-header {
+    margin-top: 0px;
+}
+
 h1{
     margin-top: 80px;
 }
