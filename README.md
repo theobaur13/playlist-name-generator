@@ -2,7 +2,7 @@
     <img src="https://raw.githubusercontent.com/theobaur13/playlist-name-generator/master/app/static/img/AI-Playlist-Name-Gen-Icon.png" alt="logo" width="100" height="100">
 </p>
 
-# playlist-name-generator
+# aiplaylistnamegen.com
 A Flask-based website that enables users to upload their Apple Music playlists and generate playlist names using GPT-3.5. The Spotify API is used to connect to the user's account and retrieve both their playlists and the songs inside each playlist. The OpenAI API text-davinci-003 model is used to generate names for the playlists based on the songs inside them. 
 
 ## Installation
